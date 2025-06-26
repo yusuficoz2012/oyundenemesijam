@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveSpeed = 5.5f;
     public float jumpForce = 7f;
     public Transform groundCheck;
     public float groundDistance = 0.3f;
@@ -25,23 +25,32 @@ public class PlayerMovement : MonoBehaviour
         // WASD hareket girdileri (YATAY + DİKEY)
         float moveX = Input.GetAxisRaw("Horizontal");  // A/D → -1 / +1
         float moveZ = Input.GetAxisRaw("Vertical");    // W/S → +1 / -1
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            moveSpeed = 7f;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            moveSpeed = 5.5f;
+        }
+      
+
 
         moveDirection = new Vector3(moveX, 0f, moveZ).normalized;
 
-        // Yere temas kontrolü
+        
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        // Zıplama (Space tuşu)
+        
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z); // Dikey hız sıfırlama
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z); 
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
 
     void FixedUpdate()
     {
-        // Fiziksel hareket (düzgün kayma için FixedUpdate)
         Vector3 move = transform.TransformDirection(moveDirection) * moveSpeed;
         rb.MovePosition(rb.position + move * Time.fixedDeltaTime);
     }
