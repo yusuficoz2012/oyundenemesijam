@@ -4,7 +4,7 @@ public class CoinSpawner : MonoBehaviour
 {
     public GameObject coinPrefab; // Coin prefab referansý
     public int coinCount = 20;    // Kaç tane coin spawnlansýn
-    public Vector3 areaSize = new Vector3(20f, 1f, 20f); // Spawn alaný (X-Z)
+    public Vector3 areaSize = new Vector3(25f, 1f, 25f); // Spawn alaný (X-Z)
 
     void Start()
     {
