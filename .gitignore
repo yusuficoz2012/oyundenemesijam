@@ -1,43 +1,37 @@
-# Unity generated folders
-[Ll]ibrary/
-[Tt]emp/
-[Oo]bj/
-[Bb]uild/
-[Bb]uilds/
-UserSettings/
-Logs/
+#################################
+# Unreal Engine Generated Files #
+#################################
+/[Bb]uild
+/[Bb]uilds
+/Binaries
+/DerivedDataCache
+/Intermediate
+/Saved
 
-# Unity package cache
-Packages/com.unity.*
-
-# Visual Studio / JetBrains Rider
-.vscode/
-.vs/
-*.csproj
-*.unityproj
-*.sln
+#################################
+# Visual Studio Generated Files #
+#################################
+# Cache Directory
+.vs
+# User Specific Files
+*.rsuser
 *.suo
 *.user
-*.userprefs
-*.pidb
-*.booproj
+*.userosscache
+*.sln.docstates
+# CPP Cache Files
+*.VC.db
+*.opendb
+*.opensdf
+*.sdf
+# Solution Files
+*.sln
+# VSCode Cache Directory
+.vscode
+# VSCode History Files
+**/.history
 
-# OS
-.DS_Store
-Thumbs.db
-
-# Crash logs
-sysinfo.txt
-
-# LFS veya büyük dosya uyarıları
-*.dll
-*.dylib
-*.exe
-
-# Burst cache
-**/com.unity.burst*/**
-
-# Don't commit by mistake
-*.apk
-*.aab
-*.ipa
+#################################
+# Miscellaneous Generated Files #
+#################################
+# ADD AS NEED BE
